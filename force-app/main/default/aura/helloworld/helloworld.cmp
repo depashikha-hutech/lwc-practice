@@ -1,0 +1,11 @@
+<aura:component >
+    <!--<c:demo1 xyz="Value from Demo1 to hello world"/>-->
+      <hr/>
+    <h6 align="center">My First Heading</h6>
+    <h1 style="text-align: center; font-size:30px;color:red;">TITLE</h1>
+    <p style="text-align: center; color:blue;">Heading</p>
+    <h5>yyyyy</h5>
+    <h1 style="text-align: center;  font-size:200%;">ss</h1>
+   <p style="font-size:30px;color:blue;"><i>Aura Component</i></p>
+    
+</aura:component>

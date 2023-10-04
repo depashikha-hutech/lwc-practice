@@ -1,0 +1,87 @@
+<aura:component controller="StudentRegistration"  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                            access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="gend" type="List"/>
+    <aura:attribute name="caste" type="List"/>
+    <aura:attribute name="Reg" type="Student_Registration__c" default="{sobjecttype:'Student_Registration__c'}"></aura:attribute> 
+    <div class="slds-text-heading_large;">
+        <h1 style="font-size:15px;text-align: center;font-size:20px"><b>New Student Registration</b></h1>
+        <p style="font-size:15px;text-align: center;"><i>(Please fill in this form to  Register.)</i>
+        <h6 >Personal Information:</h6>
+        <h1> castes</h1>
+        </p>
+    <div class="slds-grid slds-wrap  slds-p-around_medium">
+        
+       <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+         <lightning:input style="font-size:10px;" name="Student Name" label="First Name" value="{!v.Reg.FirstName__c}" placeholder="firstname" required="true" class="red"> </lightning:input> 
+       </div>
+       <div class="slds-col slds-size_1-of-5 slds-p-left_large">
+       <lightning:input style="font-size:10px;"  name="Last Name" label="Last Name" value="{!v.Reg.LastName__c}" placeholder="last name" required="true" class="red" > </lightning:input>
+       </div>
+        </div>
+       <div class="slds-grid slds-wrap  slds-p-around_medium">
+      <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+       <lightning:input style="font-size:10px;"  name="Middel Name" label="Middle Name" value="{!v.Reg.MiddleName__c}" placeholder="middle name" required="false"  > </lightning:input> 
+       </div>
+       <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+       <lightning:input style="font-size:10px;"  name="Last Name" label="PersonalEmail" value="{!v.Reg.Email__c}" placeholder="example@gmail.com" required="true" class="red" > </lightning:input>  
+       </div>   
+        </div>
+            <div class="slds-grid slds-wrap  slds-p-around_medium">
+      <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+       <lightning:input style="font-size:10px;"  name="Phone Number" label="Phone Number" value="{!v.Reg.Phone_Number__c}" placeholder="phoneno." required="true" class="red" > </lightning:input>  
+       </div> 
+<div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+         <lightning:input style="font-size:10px;"  name="Aadhar No." label="Aadhar No." value="{!v.Reg.AadharNo__c}" placeholder="aadharno." required="true" class="red" > </lightning:input> 
+        </div> 
+        </div>
+        <div class="slds-grid slds-wrap  slds-p-around_medium">
+       <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+        <lightning:input style="font-size:10px;"  name="Address." label="Address" value="{!v.Reg.Address__c}" placeholder="address" required="true" class="red" > </lightning:input>
+        </div>
+        <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+        <lightning:input style="font-size:10px;"  name="Nationality" label="Nationality" value="{!v.Reg.Nationality__c}" placeholder="nationality" required="true" class="red" > </lightning:input> 
+       </div>
+        </div>
+            <div class="slds-grid slds-wrap  slds-p-around_medium">
+             <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+                <lightning:input style="font-size:10px;"  name="DOB" label="DateOfBirth" value="{!v.Reg.Date_Of_Birth__c}" placeholder="dd/mm/yy" type="Date" required="true" class="red" > </lightning:input> 
+       </div>
+          <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+         <lightning:select label="Gender" value="{!v.Reg.Gender__c}">
+         <aura:iteration items="{!v.gend}" var="ac">
+             <option value="{!ac}">{!ac}</option>
+             </aura:iteration>
+         </lightning:select>
+          </div>    
+        </div>
+          <div class="slds-grid slds-wrap  slds-p-around_medium">
+  <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+         <lightning:select label="Caste" value="{!v.Reg.Cast__c}">
+         <aura:iteration items="{!v.caste}" var="ac">
+             <option value="{!ac}">{!ac}</option>
+             </aura:iteration>
+         </lightning:select>
+          </div> 
+    </div> 
+        <h1 style="font-family:verdana;font-size:15px">Parent Details</h1>
+    <div class="slds-grid slds-wrap  slds-p-around_medium">
+        
+        <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+         <lightning:input style="font-size:10px;" name="Mother Name" label="Mother Name" value="{!v.Reg.MotherName__c}" placeholder="name" required="true" class="red"> </lightning:input> 
+       </div>
+        </div>
+    <div class="slds-col slds-size_3-of-12  slds-p-left_xx-large">
+     <lightning:input style="font-size:10px;" name="Occupation" label="Occupation" value="{!v.Reg.Occupation__c}"  class="red"> </lightning:input> 
+       </div>
+        </div>   
+    <div class="slds-text-align_center backgroundInverse">
+        <lightning:buttonGroup>
+            <lightning:button class="refresh" variant="inverse" label="Refresh" />            
+            <lightning:button class="edit" variant="inverse" label="Edit" />
+            <lightning:button class="save" variant="inverse" label="Save" title="save action" onclick="{!c.dosave}" />
+        </lightning:buttonGroup>
+    </div>
+   
+    
+</aura:component>

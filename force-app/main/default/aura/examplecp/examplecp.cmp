@@ -1,0 +1,20 @@
+<aura:component>
+    <h1 style="text-align: center; font-size:30px;color:red;">TITLE OF PAGE</h1>
+    <aura:attribute name="firstName" type="String" default=""/>
+    <aura:attribute name="lastName" type="String" default=""/>
+    <aura:attribute name="email" type="String" default=""/>
+    
+    <form>
+        <label>First Name:</label>
+        <input type="text" value="{!v.firstName}" />
+        <br/>
+        <label>Last Name:</label>
+        <input type="text" value="{!v.lastName}" />
+        <br/>
+        <label>Email:</label>
+        <input type="email" value="{!v.email}" />
+        <br/>
+<!--<button type="submit">Submit</button>-->
+         
+    </form>
+</aura:component>

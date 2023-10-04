@@ -1,0 +1,20 @@
+<aura:component >
+    <h1 style="text-align: center; font-size:30px;color:red;">TITLE</h1>
+    <aura:attribute name="backgroundImageURL" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <p style="font-size:30px;color:blue;text-align: center;"><i>My first paragraph</i></p>
+    <h1 style="font-family:verdana;font-size:30px;text-align: center;">This is a heading</h1>
+    <div style="{!'position: relative; height: 80vh; background:' + v.backgroundColor + ' url(' + v.backgroundImageURL +') no-repeat;background-position: center;background-size: cover;'}">       
+    </div>
+    <aura:attribute name="Message" type="String"/>
+    Hello : {!v.Message}
+    <br></br>
+    <aura:handler name ="init" value = "{!this}" action = "{!c.doInit}"/>
+    <br></br>
+<lightning:button label="CLICKME" onclick="{!c.handelClick}"/>
+     <aura:attribute name="Message2" type="String"/>
+    {!v.Message2}
+    <br/>
+    <hr></hr>
+    <lightning:button label="submitME" onclick="{!c.anotherhandelClick}"/> 
+</aura:component>

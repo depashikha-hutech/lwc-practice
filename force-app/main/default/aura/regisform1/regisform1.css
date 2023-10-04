@@ -1,0 +1,31 @@
+.THIS {
+background-image: url('https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=') !important;  
+background-repeat: no-repeat;
+  background-position:right top;
+  background-size: 601px 619px;
+  margin-right: 10px;
+  background-color:lightblue; 
+    border-style: solid;
+  border-color: Bright Ube;
+}
+.THIS .refresh{
+    color:#000;
+    background-color: AliceBlue;
+}
+.THIS .refresh:hover{
+    color:Bulgarian Rose;
+}
+.THIS .edit{
+    color:#000;
+    background-color: AliceBlue;
+}
+.THIS .edit:hover{
+    color:Bulgarian Rose;
+}
+.THIS .save{
+    color:#000;
+    background-color: AliceBlue;
+}
+.THIS .save:hover{
+    color:Bulgarian Rose;
+}
